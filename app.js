@@ -46,11 +46,13 @@ const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
 const indexRouter = require("./routes/index");
 const eventRouter = require("./routes/event");
+const lessonRouter = require("./routes/lesson");
 
+app.use("/api/lessons", lessonRouter);
 app.use("/api/auth", authRouter);
 app.use("/", indexRouter);
 app.use("/api/users", usersRouter);
-app.use("/events", eventRouter);
+app.use("/api/events", eventRouter);
 
 // 404 Middleware
 app.use((req, res, next) => {
