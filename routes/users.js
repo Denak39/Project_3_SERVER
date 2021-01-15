@@ -8,6 +8,11 @@ const Event = require("../models/Event");
 
 router.get("/", function (req, res, next) {
   res.send("respond with a resource");
+  Users.find({})
+  .populate("id_user")
+  .then((userDocuments) => {
+    res.status(200).json(users);
+  })
 });
 
 router.get("/me", (req, res, next) => {
