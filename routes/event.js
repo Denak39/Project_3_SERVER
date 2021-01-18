@@ -37,7 +37,7 @@ router.post("/create", requireAuth, (req, res, next) => {
     .catch(next);
 });
 
-//specific event 
+//specific event
 router.get("/:id", (req, res, next) => {
   Event.findById(req.params.id).then((eventDocument) => {
     res.status(200).json(eventDocument);
@@ -48,6 +48,7 @@ router.get("/:id", (req, res, next) => {
 router.patch(
   "/:id",
   requireAuth,
+  uploader.single("image"),
   (req, res, next) => {
     const event = { ...req.body };
 
@@ -93,4 +94,3 @@ router.delete("/:id", requireAuth, (req, res, next) => {
 });
 
 module.exports = router;
-

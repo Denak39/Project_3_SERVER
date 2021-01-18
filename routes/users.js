@@ -20,15 +20,25 @@ router.get("/me", (req, res, next) => {
   });
 });
 
-router.patch("/me", (req, res, next) => {
-  User.findByIdAndUpdate(req.session.currentUser, req.body, { new: true })
-    .then((items) => {
-      res.status(201).send(items);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
+router.patch(
+  "/me",
+  requireAuth,
+  uploader.single("profileImg"),
+  (req, res, next) => {
+    // If no file is sent, req.file is undefined, leading to an error when trying to
+    // acces req.file.path (undefined.path) => Cannot read property path of undefined.
+    if (req.file) {
+      req.body.profileImg = req.file.path;
+    }
+    User.findByIdAndUpdate(req.session.currentUser, req.body, { new: true })
+      .then((items) => {
+        res.status(201).send(items);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+);
 
 // current session user lesson list
 router.get("/me/lessons", requireAuth, (req, res, next) => {
