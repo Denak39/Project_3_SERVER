@@ -17,7 +17,7 @@ router.get("/", (req, res, next) => {
   //.catch(error => next(error))
 });
 //create a lesson
-router.post("/", requireAuth, (req, res, next) => {
+router.post("/create", requireAuth, (req, res, next) => {
   const updateValues = { ...req.body };
 
   updateValues.trainerId = req.session.currentUser; // Retrieve the authors id from the session.

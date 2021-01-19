@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema(
   {
     name: String,
-    category: { type: String, enum: ["TBD", "TBD"] },
+    category: { type: String, enum: ["Hacking", "Network", "Programming"] },
     description: String,
     date: String,
     link: String,
