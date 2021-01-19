@@ -5,8 +5,8 @@ const lessonSchema = new Schema(
   {
     name: String,
     category: { type: String, enum: ["Hacking", "Network", "Programming"] },
-    difficulty: String,
-    content: String,
+    difficulty: { type: String, enum: ["1", "2", "3", "4"] },
+    content: { type: Object },
     likes: Number,
     trainerId: {
       type: Schema.Types.ObjectId,

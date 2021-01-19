@@ -5,9 +5,15 @@ const eventSchema = new Schema(
   {
     name: String,
     category: { type: String, enum: ["Hacking", "Network", "Programming"] },
+    // description: String,
+    // date: String,
     description: String,
     date: String,
+    // dateEnd: String,
+    // startTime: String,
+    // endTime: String,
     link: String,
+    duration: String,
     image: {
       type: String,
       default:
