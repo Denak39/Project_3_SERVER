@@ -44,13 +44,11 @@ app.use(function (req, res, next) {
 
 const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
-const indexRouter = require("./routes/index");
 const eventRouter = require("./routes/event");
 const lessonRouter = require("./routes/lesson");
 
 app.use("/api/lessons", lessonRouter);
 app.use("/api/auth", authRouter);
-app.use("/", indexRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/events", eventRouter);
 
@@ -60,7 +58,12 @@ app.use((req, res, next) => {
   error.status = 404;
   next(err);
 });
-
+if (process.env.NODE_ENV === "production") {
+  app.use("*", (req, res, next) => {
+    // If no routes match, send them the React HTML.
+    res.sendFile(__dirname + "/public/index.html");
+  });
+}
 // Error handler middleware
 // If you pass an argument to your next function in any of your routes or middlewares
 // You will end up in this middleware
