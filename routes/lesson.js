@@ -8,7 +8,7 @@ const requireAuth = require("../middlewares/requireAuth"); // Route protection m
 //lists all lessons
 router.get("/", (req, res, next) => {
   Lesson.find({})
-    .populate("") // Gives us the author's id (id_user) object document instead of just the id : )
+    .populate("trainerId") // Gives us the author's id (id_user) object document instead of just the id : )
     .then((itemDocuments) => {
       res.status(200).json(itemDocuments);
     })
