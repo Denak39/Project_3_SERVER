@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a0a724ff.chunk.css",
+    "main.js": "/static/js/main.8069c0cc.chunk.js",
+    "main.js.map": "/static/js/main.8069c0cc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/css/2.987b09ae.chunk.css": "/static/css/2.987b09ae.chunk.css",
+    "static/js/2.95f787b5.chunk.js": "/static/js/2.95f787b5.chunk.js",
+    "static/js/2.95f787b5.chunk.js.map": "/static/js/2.95f787b5.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5ca421a2adbdae26f511688c62c0ab53.js": "/precache-manifest.5ca421a2adbdae26f511688c62c0ab53.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.987b09ae.chunk.css.map": "/static/css/2.987b09ae.chunk.css.map",
+    "static/css/main.a0a724ff.chunk.css.map": "/static/css/main.a0a724ff.chunk.css.map",
+    "static/js/2.95f787b5.chunk.js.LICENSE.txt": "/static/js/2.95f787b5.chunk.js.LICENSE.txt",
+    "static/media/Home.css": "/static/media/background.345d1b5d.jpg",
+    "static/media/logo_dedsec_white.png": "/static/media/logo_dedsec_white.8406ec9a.png",
+    "static/media/student.png": "/static/media/student.771e7687.png",
+    "static/media/teacher.png": "/static/media/teacher.b8dff365.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/css/2.987b09ae.chunk.css",
+    "static/js/2.95f787b5.chunk.js",
+    "static/css/main.a0a724ff.chunk.css",
+    "static/js/main.8069c0cc.chunk.js"
+  ]
+}
