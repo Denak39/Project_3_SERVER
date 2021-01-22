@@ -35,7 +35,6 @@ router.post("/signup", (req, res, next) => {
       if (userDocument) {
         return res.status(400).json({ message: "Email already taken" });
       }
-
       const hashedPassword = bcrypt.hashSync(password, salt);
       const newUser = {
         email,
@@ -53,11 +52,13 @@ router.post("/signup", (req, res, next) => {
         })
         .catch((err) => {
           console.log(err);
+          console.log("titi");
           next();
         });
     })
     .catch((err) => {
       console.log(err);
+      console.log("toto");
       next();
     });
 });
