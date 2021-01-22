@@ -51,9 +51,15 @@ router.post("/signup", (req, res, next) => {
           req.session.currentUser = newUserDocument._id;
           res.redirect("/api/auth/isLoggedIn");
         })
-        .catch(next);
+        .catch((err) => {
+          console.log(err);
+          next();
+        });
     })
-    .catch(next);
+    .catch((err) => {
+      console.log(err);
+      next();
+    });
 });
 
 router.get("/isLoggedIn", (req, res, next) => {
