@@ -1,6 +1,15 @@
 require("dotenv").config();
 require("./config/dbConnection");
 
+// This line must come before importing any instrumented module.
+const tracer = require('dd-trace').init();
+
+var StatsD = require('hot-shots');
+var dogstatsd = new StatsD();
+
+// Increment a counter.
+dogstatsd.increment('page.views');
+
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
